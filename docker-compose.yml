@@ -4,8 +4,10 @@ services:
   alpine:
     build:
       context: .
+      dockerfile: Dockerfile.alpine
     image: djschaper/shellcheck:0.4.7-alpine3.7
   stretch:
     build:
       context: .
+      dockerfile: Dockerfile.stretch
     image: djschaper/shellcheck:0.4.7-stretch
