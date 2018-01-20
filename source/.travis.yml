@@ -34,8 +34,8 @@ script:
   # Linux Alpine based Docker image
   - name="$DOCKER_BASE-alpine"
   - DOCKER_BUILDS="$DOCKER_BUILDS $name"
-  - sed 's/^FROM .*/FROM alpine:latest/' Dockerfile > Dockerfile.alpine
-  - docker build -f Dockerfile.alpine -t "$name:current" .
+  - sed 's/^FROM .*/FROM alpine:latest/' Dockerfile.builder.alpine > Dockerfile.builder.alpine.alpine
+  - docker build -f Dockerfile.builder.alpine.alpine -t "$name:current" .
   - docker run "$name:current" --version
   # Misc packaging
   - ./.prepare_deploy
